@@ -2,34 +2,34 @@ import time
 import serial.tools.list_ports
 
 try:
-    ser = serial.Serial(port = "COM12", baudrate = 9600)
+    ser = serial.Serial(port = "/dev/ttyAMA2", baudrate = 9600)
     print("Open COM successfully")
 except:
     print('Can not open the port')
 
-relay1_ON = [0,6,0,0,0,255,200,91]
-relay1_OFF = [0,6,0,0,0,0,136,27]
+# relay1_ON = [0,6,0,0,0,255,200,91]
+# relay1_OFF = [0,6,0,0,0,0,136,27]
 
 # relay2_ON = [15,6,0,0,0,255,200,164]
 # relay2_OFF = [15,6,0,0,0,0,136,228]
 
-relay3_ON = [1,6,0,0,0,255,201,138]
-relay3_OFF = [1,6,0,0,0,0,89,202]
+relay1_ON = [1,6,0,0,0,255,201,138]
+relay1_OFF = [1,6,0,0,0,0,137,202]
 
-relay4_ON = [2,6,0,0,0,255,201,185]
-relay4_OFF = [2,6,0,0,0,0,89,249]
+relay2_ON = [2,6,0,0,0,255,201,185]
+relay2_OFF = [2,6,0,0,0,0,137,249]
 
-relay5_ON = [3,6,0,0,0,255,200,68]
-relay5_OFF = [3,6,0,0,0,0,88,28]
+relay3_ON = [3,6,0,0,0,255,200,104]
+relay3_OFF = [3,6,0,0,0,0,136,40]
 
-relay6_ON = [4,6,0,0,0,255,201,223]
-relay6_OFF = [4,6,0,0,0,0,89,159]
+relay4_ON = [4,6,0,0,0,255,201,223]
+relay4_OFF = [4,6,0,0,0,0,137,159]
 
-relay7_ON = [5,6,0,0,0,255,200,14]
-relay7_OFF = [5,6,0,0,0,0,88,78]
+relay5_ON = [5,6,0,0,0,255,200,14]
+relay5_OFF = [5,6,0,0,0,0,136,78]
 
-relay8_ON = [6,6,0,0,0,255,200,61]
-relay8_OFF = [6,6,0,0,0,0,88,125]
+relay6_ON = [6,6,0,0,0,255,200,61]
+relay6_OFF = [6,6,0,0,0,0,136,125]
 
 def set_device1(state):
     if state == True:
@@ -89,7 +89,7 @@ def readMoisture():
 #     print(readTemperature())
 #     time.sleep(1)
 
-ser.write(relay1_ON)
+ser.write(relay3_ON)
 time.sleep(2)
-ser.write(relay1_OFF)
+ser.write(relay3_OFF)
 time.sleep(2)
