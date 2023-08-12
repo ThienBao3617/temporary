@@ -31,6 +31,12 @@ relay5_OFF = [5,6,0,0,0,0,136,78]
 relay6_ON = [6,6,0,0,0,255,200,61]
 relay6_OFF = [6,6,0,0,0,0,136,125]
 
+relay7_ON = [7,6,0,0,0,255,201,236]
+relay7_OFF = [7,6,0,0,0,0,137,172]
+
+relay8_ON = [8,6,0,0,0,255,201,19]
+relay8_OFF = [8,6,0,0,0,0,137,83]
+
 def set_device1(state):
     if state == True:
         ser.write(relay1_ON)
@@ -130,3 +136,17 @@ print("ON6_OK")
 ser.write(relay6_OFF)
 time.sleep(2)
 print("OFF6_OK")
+
+ser.write(relay7_ON)
+time.sleep(2)
+print("ON7_OK")
+ser.write(relay7_OFF)
+time.sleep(2)
+print("OFF7_OK")
+
+ser.write(relay8_ON)
+time.sleep(2)
+print("ON8_OK")
+ser.write(relay8_OFF)
+time.sleep(2)
+print("OFF8_OK")
